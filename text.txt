@@ -1,0 +1,173 @@
+ const roleData = ["user", "admin"]
+const orderStatusValue = [
+  { orderStatus: "1", name: "ยังไม่ตรวจสอบ" },
+  { orderStatus: "2", name: "ชำระเงินสำเร็จ" },
+  { orderStatus: "3", name: "ชำระเงินไม่สำเร็จ" },
+  { orderStatus: "4", name: "กำลังจัดส่ง" },
+  { orderStatus: "5", name: "ส่งสินค้าสำเร็จ" },
+  { orderStatus: "6", name: "ส่งสินค้าไม่สำเร็จ" },
+];
+
+<select
+  name="orderStatus"
+  id="orderStatus"
+  value={editData.orderStatus}
+  onChange={(e) => handleChange(e)}
+  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+>
+  {orderStatusValue.map((option) => (
+    <option key={option.orderStatus} value={option.orderStatus}>
+      {option.name}
+    </option>
+  ))}
+</select>
+
+  1 ยังไม่ตรวจสอบ =>  2,3
+
+  2 ชำระเงินสำเร็จ => 4 เก็บค่ามัดจำ
+
+  3 ชำระเงินไม่สำเร็จ =>
+
+  4 กำลังจัดส่ง => 5,6
+  
+  5 ส่งสินค้าสำเร็จ => เก็บอีกครึ่ง
+
+  6 ส่งสินค้าไม่สำเร็จ => ยึดค่ามัดจำ
+
+
+
+
+
+
+
+
+
+
+editData.products = [
+    {
+        "productData": {
+            "product": "651fd65f2d85b36aa2c8b62c",
+            "count": 5,
+            "price": 500,
+            "_id": "6534d59a823fd57e70f52c02"
+        },
+        "title": "ปู",
+        "images": [
+            {
+                "asset_id": "beab36f9a604bd3cea8cacb5cab42104",
+                "public_id": "bijzbn56r6hq7smktxtb",
+                "version": 1696585278,
+                "version_id": "a6e9e9b3c2b7c65f5245bfe9d9d519c3",
+                "signature": "b5cafca8f00ebc5055eac34af793e50abee49deb",
+                "width": 274,
+                "height": 184,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2023-10-06T09:41:18Z",
+                "tags": [],
+                "bytes": 40345,
+                "type": "upload",
+                "etag": "ae6d730a089602dd856a88e8bc96079d",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/dtcbw6yw4/image/upload/v1696585278/bijzbn56r6hq7smktxtb.jpg",
+                "secure_url": "https://res.cloudinary.com/dtcbw6yw4/image/upload/v1696585278/bijzbn56r6hq7smktxtb.jpg",
+                "folder": "",
+                "api_key": "356869677748872"
+            }
+        ]
+    },
+    item.productData.count
+     item.productData.price
+    {
+        "productData": {
+            "product": "651fd5ff2d85b36aa2c8b60b",
+            "count": 10,
+            "price": 1000,
+            "_id": "6534d59a823fd57e70f52c03"
+        },
+        "title": "หมูสามชั้น",
+        "images": [
+            {
+                "asset_id": "1f61006d1f04dc7d10d77038958c0a93",
+                "public_id": "enwmpupnexgmghhpa85b",
+                "version": 1696585170,
+                "version_id": "bd1d763faf9b30b4f91db7cbe1466a73",
+                "signature": "9f4f414b23dd0f6a276e9211b997a168be178602",
+                "width": 720,
+                "height": 540,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2023-10-06T09:39:30Z",
+                "tags": [],
+                "bytes": 264148,
+                "type": "upload",
+                "etag": "003486a2bcb278454d477c2cc2b8d0c4",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/dtcbw6yw4/image/upload/v1696585170/enwmpupnexgmghhpa85b.jpg",
+                "secure_url": "https://res.cloudinary.com/dtcbw6yw4/image/upload/v1696585170/enwmpupnexgmghhpa85b.jpg",
+                "folder": "",
+                "api_key": "356869677748872"
+            }
+        ]
+    },
+    {
+        "productData": {
+            "product": "6520173e2d85b36aa2c8b7fa",
+            "count": 10,
+            "price": 25,
+            "_id": "6534d59a823fd57e70f52c04"
+        },
+        "title": "ปลาสองตัว",
+        "images": [
+            {
+                "asset_id": "34e2e41487029c41bef0c1a39a6baf8c",
+                "public_id": "i4gxesgomdalx1fpizlo",
+                "version": 1696601907,
+                "version_id": "b60d2dc524fc3c48d1361a190921ca49",
+                "signature": "c06924162d75b807362968ce046ea435499b34e2",
+                "width": 700,
+                "height": 700,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2023-10-06T14:18:27Z",
+                "tags": [],
+                "bytes": 100801,
+                "type": "upload",
+                "etag": "f33981e643be11607314013293c526ac",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/dtcbw6yw4/image/upload/v1696601907/i4gxesgomdalx1fpizlo.jpg",
+                "secure_url": "https://res.cloudinary.com/dtcbw6yw4/image/upload/v1696601907/i4gxesgomdalx1fpizlo.jpg",
+                "folder": "",
+                "api_key": "356869677748872"
+            }
+        ]
+    }
+]
+
+
+
+
+
+
+ จากชุดข้อมูล ถ้าต้องการนำ quantity และ addQuantity มาบวกกันและเก็บใน quantity และให้ตัว addQuantity หายไปจากชุดข้อมูลควรทำยังไง
+dataStock = {
+    "_id": "65389958c5b0e10f9e0a2694",
+    "title": "ส้ม",
+    "description": "อร่อยอร่อย",
+    "category": {
+        "_id": "653898f1c5b0e10f9e0a2649",
+        "name": "ผลไม้",
+        "createdAt": "2023-10-25T04:26:25.764Z",
+        "updatedAt": "2023-10-25T04:26:25.764Z",
+        "__v": 0
+    },
+    "price": 12,
+    "sold": 0,
+    "count": 1,
+    "images": [],
+    "quantity": 50,
+    "createdAt": "2023-10-25T04:28:08.242Z",
+    "updatedAt": "2023-10-25T04:28:08.242Z",
+    "__v": 0,
+    "addQuantity": "30"
+}
